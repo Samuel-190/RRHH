@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Testing\Fluent\Concerns\Has;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Collaborator extends Model
-{
+class Collaborator extends Model {
+
+    use HasFactory;
+
     protected $fillable = [
         'first_name',
         'last_name',

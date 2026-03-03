@@ -6,5 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/api/collaborators', [CollaboratorController::class, 'store']);
+Route::resource('collaborators', CollaboratorController::class)
+    ->middleware(['auth', 'role:gestor_rrhh']);
 

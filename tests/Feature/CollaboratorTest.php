@@ -11,14 +11,11 @@ class CollaboratorTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected function setUp(): void
-    {
+    protected function setUp(): void {
+        
         parent::setUp();
 
-        Role::create([
-            'name' => 'gestor_rrhh',
-            'guard_name' => 'web',
-        ]);
+        $this->seed(\Database\Seeders\RoleSeeder::class);
     }
 
     /** @test */

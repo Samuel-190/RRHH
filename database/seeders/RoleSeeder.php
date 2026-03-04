@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use App\Models\User;
+use Spatie\Permission\PermissionRegistrar;
 
 class RoleSeeder extends Seeder
 {
@@ -14,18 +15,12 @@ class RoleSeeder extends Seeder
      */
     public function run() {
 
-        Role::create([
-            'name' => 'gestor_rrhh',
-            'guard_name' => 'web',
-        ]);
-        
-        $user = User::create([
-            'name' => 'Admin RRHH',
-            'email' => 'rrhh@techsolutions.com',
-            'password' => bcrypt('password'),
-        ]);
+        app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
-        $user->assignRole('gestor_rrhh');
+        Role::firstOrCreate([
+           'name' => 'gestor_rrhh',
+           'guard_name' => 'web',
+      ]);
     }
     
 }

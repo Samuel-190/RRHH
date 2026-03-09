@@ -8,11 +8,8 @@ use Spatie\Permission\Models\Role;
 use App\Models\User;
 use Spatie\Permission\PermissionRegistrar;
 
-class RoleSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     */
+class RoleSeeder extends Seeder  {
+    
     public function run() {
 
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
@@ -22,5 +19,4 @@ class RoleSeeder extends Seeder
            'guard_name' => 'web',
       ]);
     }
-    
 }

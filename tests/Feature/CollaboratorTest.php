@@ -7,8 +7,8 @@ use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CollaboratorTest extends TestCase
-{
+class CollaboratorTest extends TestCase {
+    
     use RefreshDatabase;
 
     protected function setUp(): void {

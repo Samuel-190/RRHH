@@ -21,7 +21,7 @@ class ContractController extends Controller {
 
         Contract::create($request->all());
 
-        return redirect()->route('collaborators.index');
+        return redirect()->back();
     }
 
     public function update(Request $request, $id) {
@@ -40,6 +40,6 @@ class ContractController extends Controller {
 
         $contract->update($request->all());
 
-        return redirect()->route('collaborators.index');
+        return redirect()->back();
     }
 }

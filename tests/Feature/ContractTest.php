@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use App\Models\Collaborator;
 use App\Models\User;
+use App\Models\Contract;
 use Tests\TestCase;
 
 class ContractTest extends TestCase {
@@ -32,10 +33,10 @@ class ContractTest extends TestCase {
         $response = $this->post('/contracts', [
             'collaborator_id' => $collaborator->id,
             'contract_type' => 'Fijo',
-            'start_date' => '2025-01-01',
-            'end_date' => '2025-12-31',
-            'position' => 'Desarrollador',
-            'salary' => 3000,
+            'start_date' => '2026-03-01',
+            'end_date' => '2027-02-10',
+            'position' => 'Desarrollador de software',
+            'salary' => 3500,
             'status' => 'Activo'
         ]);
 
@@ -43,7 +44,7 @@ class ContractTest extends TestCase {
 
         $this->assertDatabaseHas('contracts', [
             'collaborator_id' => $collaborator->id,
-            'position' => 'Desarrollador'
+            'position' => 'Desarrollador de software'
         ]);
     }
 
@@ -58,10 +59,10 @@ class ContractTest extends TestCase {
         $response = $this->post('/contracts', [
             'collaborator_id' => 999,
             'contract_type' => 'Fijo',
-            'start_date' => '2025-01-01',
-            'end_date' => '2025-12-31',
-            'position' => 'Desarrollador',
-            'salary' => 3000,
+            'start_date' => '2026-03-01',
+            'end_date' => '2027-05-17',
+            'position' => 'Analista de datos',
+            'salary' => 2800,
             'status' => 'Activo'
         ]);
 
@@ -83,8 +84,8 @@ class ContractTest extends TestCase {
         $response = $this->post('/contracts', [
             'collaborator_id' => $collaborator->id,
             'contract_type' => 'Fijo',
-            'start_date' => '2025-01-10',
-            'end_date' => '2025-01-01', 
+            'start_date' => '2026-03-10',
+            'end_date' => '2026-03-05', 
             'position' => 'Desarrollador',
             'salary' => -1000, 
             'status' => 'Activo'
@@ -108,7 +109,7 @@ class ContractTest extends TestCase {
 
         $collaborator = Collaborator::factory()->create();
 
-        $contract = \App\Models\Contract::create([
+        $contract = Contract::create([
             'collaborator_id' => $collaborator->id,
             'contract_type' => 'Fijo',
             'start_date' => '2025-01-01',
@@ -124,7 +125,7 @@ class ContractTest extends TestCase {
             'start_date' => '2025-01-01',
             'end_date' => '2025-12-31',
             'position' => 'Senior Developer',
-            'salary' => 4000,
+            'salary' => 4200,
             'status' => 'Activo'
         ]);
 
@@ -133,7 +134,7 @@ class ContractTest extends TestCase {
         $this->assertDatabaseHas('contracts', [
             'id' => $contract->id,
             'position' => 'Senior Developer',
-            'salary' => 4000
+            'salary' => 4200
         ]);
     }
 }

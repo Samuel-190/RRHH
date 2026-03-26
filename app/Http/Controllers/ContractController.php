@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contract;
+use App\Models\ContractTermination;
 
 class ContractController extends Controller {
 
@@ -39,6 +40,26 @@ class ContractController extends Controller {
         $contract = \App\Models\Contract::findOrFail($id);
 
         $contract->update($request->all());
+
+        return redirect()->back();
+    }
+
+    public function terminate(Request $request, $id) {
+
+        $contract = Contract::findOrFail($id);
+
+        if (in_array($contract->status, ['Terminado', 'Finalizado'])) {
+            abort(403);
+        }
+
+        ContractTermination::create([
+            'contract_id' => $contract->id, 
+            'termination_date' => $request->termination_date,
+            'reason' => $request->termination_reason,
+        ]);
+
+        $contract->status = 'Terminado';
+        $contract->save();
 
         return redirect()->back();
     }

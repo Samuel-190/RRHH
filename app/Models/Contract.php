@@ -25,4 +25,9 @@ class Contract extends Model {
 
         return $this->hasMany(ContractExtension::class);
     }
+
+    public function termination() {
+        
+        return $this->hasOne(ContractTermination::class);
+    }
 }

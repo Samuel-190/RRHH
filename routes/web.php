@@ -13,6 +13,6 @@ Route::middleware(['auth','role:gestor_rrhh'])->group(function () {
     Route::resource('collaborators', CollaboratorController::class);
     Route::resource('contracts', ContractController::class);
     Route::post('/contracts/{id}/extensions', [ContractExtensionController::class, 'store']);
-
+    Route::patch('/contracts/{id}/terminate', [ContractController::class, 'terminate']);
 }); 
 

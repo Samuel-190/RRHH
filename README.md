@@ -3,7 +3,7 @@
 Proyecto backend desarrollado para **Tech Solutions SAS** que permite gestionar la información de colaboradores y el ciclo de vida de sus contratos dentro de la empresa. El sistema automatiza procesos del área de Recursos Humanos como la creación de colaboradores, gestión de contratos, prórrogas y terminaciones.
 Su objetivo es centralizar y automatizar la gestión de contratos de los colaboradores, permitiendo mantener la información organizada, segura y validada mediante pruebas automatizadas.
 
----
+<br><br>
 
 # 📈 Metodología de Desarrollo
 
@@ -17,7 +17,7 @@ Flujo de trabajo:
 
 Esto permite asegurar que la lógica del sistema funcione correctamente.
 
----
+<br><br>
 
 # 📍 Funcionalidades Principales
 
@@ -39,7 +39,7 @@ Permite extender la duración de contratos existentes.
 
 Permite finalizar contratos antes de su fecha de vencimiento.
 
----
+<br><br>
 
 # 👤 Roles del Sistema
 
@@ -49,7 +49,7 @@ Este proyecto maneja el paquete de laravel **spatie/laravel-permission**, con el
 | ----------- | -------------------------------------------------------------- |
 | Gestor RRHH | Gestión de colaboradores, contratos, prórrogas y terminaciones |
 
----
+<br><br>
 
 # 🔌 Stack Tecnológico
 
@@ -57,9 +57,8 @@ Este proyecto maneja el paquete de laravel **spatie/laravel-permission**, con el
 * **Base de Datos:** MySQL 8+
 * **Pruebas:** PHPUnit
 * **Gestión de permisos:** spatie/laravel-permission
-* **Servidor Web:** Nginx / Apache
 
----
+<br><br>
 
 # ✏️ Control de Versiones
 
@@ -78,7 +77,7 @@ El proyecto utiliza **Git** para el control de versiones, sigue el modelo de tra
 
 Este flujo permite mantener el código organizado y separar claramente el desarrollo de la versión estable del sistema.
 
----
+<br><br>
 
 # 🧪 Casos de Prueba
 
@@ -96,7 +95,20 @@ Este proyecto cuenta con un conjunto de casos de prueba diseñados para validar 
 - [Casos de prueba - Prórrogas](./casos_de_prueba/casos_prorrogas.md)
 - [Casos de prueba - Terminacion](./casos_de_prueba/terminaciones.md)
 
----
+<br><br>
+
+# 📥 Pasos para instalar el sistema
+
+Sigue los siguientes pasos para la correcta instalacion del proyecto y puedas ejecutar los test sin problemas:
+
+1- Clona el repositorio con ``git clone url``<br>
+2- Instala composer, para administrar y acceder a las dependencias, lo puedes hacer con este comando ``composer install``<br>
+3- Configura el ``.env``, ejecuta el siguiente comando para crearlo ``cp .env.example .env``<br>
+4- Genera la key para el ``.env``, lo puedes hacer con este comando ``php artisan key:generate``<br>
+5- En el ``.env``, deberas descomentar y modificar algunas lineas de codigo para la configuracion de la base de datos.<br>
+6- Ejecuta las migraciones para crear las tablas donde se almacenaran todos los datos, hazlo asi ``php artisan migrate`` 
+
+<br><br>
 
 # ▶️ Ejecutar Pruebas
 
@@ -106,7 +118,7 @@ Para ejecutar los test del sistema:
 php artisan test
 ```
 
----
+<br><br>
 
 # 🗒️ Notas
 

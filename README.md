@@ -80,6 +80,22 @@ Este flujo permite mantener el código organizado y separar claramente el desarr
 
 ---
 
+# 🧪 Casos de Prueba
+
+Este proyecto cuenta con un conjunto de casos de prueba diseñados para validar el correcto funcionamiento de los módulos principales del sistema, puedes usarlos como guia para ejecutar los test de forma correcta.
+
+### Módulos cubiertos
+- Módulo de Colaboradores
+- Módulo de Contratos
+- Módulo de Prórrogas
+
+### Puedes consultar el detalle completo en:
+- [Casos de prueba - Colaboradores](./casos_de_prueba/casos_collaborators.md)
+- [Casos de prueba - Contratos](./casos_de_prueba/casos_contratos.md)
+- [Casos de prueba - Prórrogas](./casos_de_prueba/casos_prorrogas.md)
+
+---
+
 # ▶️ Ejecutar Pruebas
 
 Para ejecutar los test del sistema:

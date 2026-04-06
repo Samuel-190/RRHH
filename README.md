@@ -88,11 +88,13 @@ Este proyecto cuenta con un conjunto de casos de prueba diseñados para validar 
 - Módulo de Colaboradores
 - Módulo de Contratos
 - Módulo de Prórrogas
+- Módulo de Terminacion de contratos
 
 ### Puedes consultar el detalle completo en:
 - [Casos de prueba - Colaboradores](./casos_de_prueba/casos_collaborators.md)
 - [Casos de prueba - Contratos](./casos_de_prueba/casos_contratos.md)
 - [Casos de prueba - Prórrogas](./casos_de_prueba/casos_prorrogas.md)
+- [Casos de prueba - Terminacion](./casos_de_prueba/terminaciones.md)
 
 ---
 
